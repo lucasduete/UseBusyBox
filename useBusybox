@@ -1,0 +1,16 @@
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='busybox ls --color=auto'
+    alias dir='busybox  ls -C -b --color=auto'
+    alias vdir='busybox ls -l -b --color=auto'
+
+    alias grep='busybox grep'
+    alias fgrep='busybox fgrep'
+    alias egrep='busybox egrep'
+fi
+
+# some more ls aliases
+alias ll='busybox ls -alF'
+alias la='busybox ls -A'
+alias l='busybox ls -CF'
